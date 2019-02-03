@@ -1,0 +1,269 @@
+@import 'mixins';
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #185691;
+}
+.main-box {
+    background-color: #fff;
+    height: 555px;
+    width: 800px;
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        background-color: #E5E6E8;
+        @include el(btn) {
+            flex: 1;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: #fff;
+            background-color: transparent;
+            text-shadow: 0px 0px 1px black;
+            @include mod(car) {
+                border-left: 1px solid #c3c3c3;
+                border-right: 1px solid #c3c3c3;
+            }
+        }
+    }
+    .content {
+        padding: 40px;
+        @include el(search-box) {
+            display: flex;
+            justify-content: space-between;
+            @include el(search) {
+                display: flex;
+                position: relative;
+                @include el(input) {
+                    padding-right: 40px;
+                    padding-left: 10px;
+                }
+                @include el(btn) {
+                    width: 40px;
+                    height: 40px;
+                    background: transparent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #73ce42;
+                    border: none;
+                    border-left: 1px solid #e5e6e8;
+                    outline: none;
+                    margin-left: -40px;
+                    z-index: 2;
+                    font-size: 15px;
+                    cursor: pointer;
+                }
+                .users-list {
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    top: 40px;
+                    max-height: 380px;
+                    overflow: auto;
+                    @include el(item) {
+                        background: #e5e6e8;
+                        border-bottom: 1px solid #c5c5c5;
+                        padding: 8px 10px;
+                        font-size: 14px;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: #d6d6d6;
+                        }
+                        &:last-child {
+                            border-bottom:none;
+                        }
+                    }
+                }
+            }
+            .action-btns {
+                display: flex;
+                @include el(btn) {
+                    text-transform: capitalize;
+                    font-size: 13px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    padding: 0px 12px;
+                    cursor: pointer;
+                    @include mod(update) {
+                        background-color: #73ce42;
+                    }
+                    @include mod(edit) {
+                        background-color: #5bc0de;
+                    }
+                    @include mod(del) {
+                        background-color: #d64b46;
+                    }
+                }
+            }
+        }
+        @include el(register-box) {
+            .person-form {
+                display: inline-block;
+                @include el(list) {
+                    @include el(item) {
+                        margin-top: 10px;
+                        position: relative;
+                        &:after {                           
+                            font-family: FontAwesome;                              
+                            position: absolute;                                
+                            z-index: 3;
+                            width: 40px;
+                            height: 40px;
+                            top: 0px;
+                            bottom: 0px;
+                            left: 0px;
+                            margin: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 14px;
+                            color: #73ce42;
+                            border-right: 1px solid #e5e6e8;
+                        }
+                        &:nth-child(1) {
+                            &:after {
+                                content: '\f007';                             
+                            }
+                        }
+                        &:nth-child(2) {
+                            &:after {
+                                content: '\f007';                             
+                            }
+                        }
+                        &:nth-child(3) {
+                            &:after {
+                                content: '\f007';                             
+                            }
+                        }
+                        &:nth-child(4) {
+                            &:after {
+                                content: '\f2bb';                             
+                            }
+                        }
+                        &:nth-child(5) {
+                            display: flex;
+                            justify-content: space-between;
+                            select {
+                                width: 86px;
+                                height: 40px;
+                                outline: none;
+                            }
+                        }
+                    }   
+                    .register-person-btn {
+                        height: 40px;
+                        width: 270px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 15px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        color: #fff;
+                        background-color: #2abbac;
+                    }                 
+                }
+                @include el(input) {
+                    display: block;
+                }
+            }
+            .car-form {
+                    li {
+                        &:nth-child(1) {
+                            &:after {
+                                content: '\f1b9';                           
+                            }
+                        }
+                        &:nth-child(2) {
+                            &:after {
+                                content: '\f0ca';                             
+                            }
+                        }
+                        &:nth-child(3) {
+                            &:after {
+                                content: '\f25d';                             
+                            }
+                        }
+                        &:nth-child(4) {
+                            &:after {
+                                content: '\f2bb';                             
+                            }
+                        }
+                        &:nth-child(5) {
+                            &:after {
+                                content: '\f042';                             
+                            }
+                        }
+                        &:nth-child(6) {
+                            &:after {
+                                content: '\f2b9';                             
+                            }
+                        }
+                    }
+            }
+            @include el(add-user-btn) {
+                background-color: transparent;
+                position: relative;
+                top: 120px;
+                left: 60px;
+                padding: 40px;
+                cursor: pointer;
+                i {
+                    font-size: 50px;
+                    color: #2abbac;
+                }
+            }
+        }
+    }
+}
+.input {
+    width: 270px;
+    height: 40px;
+    border:1px solid #e5e6e8;
+    outline: none;
+    padding-left: 50px;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 40px;
+        background: red;
+        position: absolute;
+    }
+}
+.active {
+    color: #73ce42 !important;
+    background-color: #fff !important;
+    text-shadow: none !important;
+}
+button {
+    border: 0px;
+    outline: none;
+}
+.warning {
+    border-color: red !important;
+}
+.red {
+    color: red !important;
+}
